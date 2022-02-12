@@ -32,6 +32,13 @@ class Students
 
 public class SortingStudents
 {
+    //sort by both
+    public static Students[] SortTheStudentsBasedOnBoth(Students[] students)
+    {
+        students = SortTheStudentsBasedOnName(students);
+        students = SortTheStudentsBasedOnID(students);
+        return students;
+    }
     public static Students[] SortTheStudentsBasedOnName(Students[] students)
     {
         //sorting the students based on ID using bubble sort
@@ -102,7 +109,13 @@ public class SortingStudents
         {
             System.out.println("Name: "+sortedStudents2[i].getName()+" ID: "+sortedStudents2[i].getId());
         }
+        System.out.println("Sorting students based on both");
+        Students[] sortedStudents3 = SortTheStudentsBasedOnBoth(studentArray);
 
+        for(int i = 0 ; i<4;i++)
+        {
+            System.out.println("ID: "+sortedStudents[i].getId()+" Name: "+sortedStudents[i].getName());
+        }
     }
 
 }

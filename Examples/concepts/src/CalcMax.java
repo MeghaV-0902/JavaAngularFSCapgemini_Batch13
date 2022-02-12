@@ -66,7 +66,7 @@ class StudentDetails
 
 public class CalcMax
 {
-    public static StudentDetails getMaxStudentPercentage(StudentDetails[] student)
+    public static StudentsDetails getMaxStudentPercentage(StudentsDetails[] student)
     {
         int len= student.length;
         int index=0;
@@ -84,19 +84,19 @@ public class CalcMax
     }
     public static void main(String args[])
     {
-        StudentDetails studentDetails1= new StudentDetails(101,"Raj",45,65,75);
-        StudentDetails studentDetails2= new StudentDetails(102,"Rajesh",55,70,75);
-        StudentDetails studentDetails3= new StudentDetails(102,"Suraj",46,66,75);
-        StudentDetails studentDetails4= new StudentDetails(101,"Tom",40,65,75);
+        StudentsDetails studentDetails1= new StudentsDetails(101,"Raj",45,65,75);
+        StudentsDetails studentDetails2= new StudentsDetails(102,"Rajesh",55,70,75);
+        StudentsDetails studentDetails3= new StudentsDetails(102,"Suraj",46,66,75);
+        StudentsDetails studentDetails4= new StudentsDetails(101,"Tom",40,65,75);
 
-        StudentDetails[] students = new StudentDetails[4];
+        StudentsDetails[] students = new StudentsDetails[4];
         students[0]=studentDetails1;
         students[1]=studentDetails2;
         students[2]=studentDetails3;
         students[3]=studentDetails4;
 
 
-        StudentDetails StudentWithMaxPercent = getMaxStudentPercentage(students);
+        StudentsDetails StudentWithMaxPercent = getMaxStudentPercentage(students);
 
         int MaxAvg= StudentWithMaxPercent.average();
 
