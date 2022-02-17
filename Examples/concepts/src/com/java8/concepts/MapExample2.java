@@ -21,6 +21,17 @@ public class MapExample2 {
 
         System.out.println("===================key set ==============");
         Set<Integer> keySet =  map.keySet();
+        Iterator <Map.Entry<Integer,String>> itrEntry = new Iterator<Map.Entry<Integer, String>>() {
+            @Override
+            public boolean hasNext() {
+                return false;
+            }
+
+            @Override
+            public Map.Entry<Integer, String> next() {
+                return null;
+            }
+        };
         while(itrEntry.hasNext()){
             Map.Entry<Integer,String> entry = itrEntry.next();
             System.out.println(entry.getKey()+"  "+entry.getValue());
