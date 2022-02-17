@@ -21,5 +21,7 @@ public class TestInheritance
         ScientificCalculator scientificCalculator = new ScientificCalculator();
         scientificCalculator.add(12,20);
         scientificCalculator.area(4,5);
+
+
     }
 }

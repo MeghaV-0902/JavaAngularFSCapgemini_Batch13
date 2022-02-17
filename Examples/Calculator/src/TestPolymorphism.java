@@ -19,5 +19,8 @@ public class TestPolymorphism
         obj.addition(2,3);
         obj.addition(1,2,3);
         obj.addition(1.5,3.5);
+        obj.addition(1,1.5);
+
+       // double abc =  (double)6/3;
     }
 }
