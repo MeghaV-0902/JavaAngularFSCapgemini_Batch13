@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="3e406e21-caa5-4990-a005-9a5cb7d55e76" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../PracticeQuestions/out/production/PracticeQuestions/com/ques2/Mobile.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PracticeQuestions/out/production/PracticeQuestions/com/ques2/Source.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PracticeQuestions/src/com/ques2/Source.java" beforeDir="false" afterPath="$PROJECT_DIR$/../PracticeQuestions/src/com/question2/Source.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ThreadProject/src/ThreadDemo.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ThreadProject/src/ThreadDemo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../helloWorld/out/production/helloWorld/com/company/helloWorld.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../helloWorld/src/com/company/helloWorld.java" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="ProjectId" id="26DvlIosOhAV0NFWEKgO35IeFlP" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="3e406e21-caa5-4990-a005-9a5cb7d55e76" name="Changes" comment="" />
+      <created>1646971127381</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1646971127381</updated>
+    </task>
+    <servers />
+  </component>
+</project>

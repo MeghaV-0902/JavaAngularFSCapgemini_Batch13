@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="eb3e12c9-8d31-4329-b5e6-e2000b5fbc56" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../PracticeQuestions/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../PracticeQuestions/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PracticeQuestions/out/production/PracticeQuestions/com/ques2/Mobile.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PracticeQuestions/out/production/PracticeQuestions/com/ques2/Source.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PracticeQuestions/src/com/ques2/Source.java" beforeDir="false" afterPath="$PROJECT_DIR$/../PracticeQuestions/src/com/question2/Source.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ThreadProject/src/ThreadDemo.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ThreadProject/src/ThreadDemo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../helloWorld/out/production/helloWorld/com/company/helloWorld.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../helloWorld/src/com/company/helloWorld.java" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="JpbToolWindowState">
+    <option name="myId2FirstActivated">
+      <map>
+        <entry key="com.haulmont.jpb.jpaInspector" value="true" />
+        <entry key="com.haulmont.jpb.jpaPalette" value="true" />
+        <entry key="com.haulmont.jpb.jpaStructure" value="true" />
+      </map>
+    </option>
+    <option name="myId2Visible">
+      <map>
+        <entry key="com.haulmont.jpb.jpaInspector" value="false" />
+        <entry key="com.haulmont.jpb.jpaPalette" value="false" />
+        <entry key="com.haulmont.jpb.jpaStructure" value="true" />
+      </map>
+    </option>
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="useMavenConfig" value="true" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="270MrL0yuhsZ1PerJndePiz6RRc" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RequestMappingsPanelOrder0" value="0" />
+    <property name="RequestMappingsPanelOrder1" value="1" />
+    <property name="RequestMappingsPanelWidth0" value="75" />
+    <property name="RequestMappingsPanelWidth1" value="75" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../demo" />
+  </component>
+  <component name="RunManager">
+    <configuration name="SpringbootThymeleafCrudWebAppApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="springboot-thymeleaf-crud-web-app" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="net.javaguides.springboot.SpringbootThymeleafCrudWebAppApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="eb3e12c9-8d31-4329-b5e6-e2000b5fbc56" name="Changes" comment="" />
+      <created>1648452747642</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1648452747642</updated>
+      <workItem from="1648452749026" duration="1329000" />
+      <workItem from="1648458175857" duration="595000" />
+      <workItem from="1648476372355" duration="14000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>
