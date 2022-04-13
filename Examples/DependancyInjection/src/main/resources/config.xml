@@ -19,9 +19,10 @@
     </bean>
 
     <bean class="org.example.Student" name="student2">
-        <constructor-arg value="2"/>
+        <constructor-arg value="2" type="int"/>
         <constructor-arg value="Sam"/>
         <constructor-arg value="Blore"/>
     </bean>
+
 
 </beans>

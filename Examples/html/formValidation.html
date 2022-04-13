@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Form Validation</title>
+    <link rel="stylesheet" href="formValidation.css">
+    <script type="text/javascript" src="formValidation.js">
+    </script>
+  </head>
+  <body>
+    <div class="outer">
+    <div class="main">
+      <form name="form"  method="post" >
+        <div class="inner">
+      <table>
+        <tr>
+          <h3>Personal Information</h3>
+        </tr>
+        <tr>
+          <td>First Name: </td>
+          <td><input type="text" name="fn" id="fn" value=""><span id="error-fname"></span></td>
+        </tr>
+        <tr>
+          <td>Last Name: </td>
+          <td><input type="text" name="ln" id="ln" value=""><span id="error-lname"></span></td>
+        </tr>
+        <tr>
+          <td>Date of Birth </td>
+          <td><input type="date" name="dob" id="date" value=""><span id="error-dob"></span></td>
+        </tr>
+        <tr>
+          <td>Gender</td>
+          <td><select class="" name="Gender">
+            <option value="Female">Female</option>
+            <option value="Male">Male</option>
+            <option value="Other">Other</option>
+          </select><span id="error-gender"></span></td>
+        </tr>
+        </table>
+        <table>
+        <tr>
+          <h3>Account Information</h3>
+        </tr>
+        <tr>
+          <td>  Email:</td>
+          <td> <input type="email" name="email" value=""><span id="error-email"></span></td>
+        </tr>
+        <tr>
+          <td> Re-enter Email:</td>
+          <td> <input type="email" name="remail" value=""><span id="error-remail"></span></td>
+        </tr>
+        <tr>
+          <td>  Password:</td>
+          <td> <input type="password" name="password" value=""><span id="error-password"></span></td>
+        </tr>
+        <tr>
+          <td>Retype Password:</td>
+          <td> <input type="password" name="repassword" value=""><span id="error-repassword"></span></td>
+        </tr>
+        <tr>
+          <td>  Secret question:</td>
+          <td><select class="" name="Question">
+            <option value="Pet name">Pet name?</option>
+            <option value="School name">School name?</option>
+            <option value="Favourite colour">Favourite colour?</option>
+          </select><span id="error-question"></span></td>
+        </tr>
+        <tr>
+          <td>Security Answer:</td>
+          <td> <input type="text" name="answer" value=""><span id="error-answer"></span></td>
+        </tr>
+        </table>
+        <table>
+      <tr>
+          <h3>Contact Information</h3>
+      </tr>
+        <tr>
+          <td>Address: </td>
+          <td><input type="text" name="address" value=""><span id="error-address"></span></td>
+        </tr>
+        <tr>
+          <td>City:</td>
+          <td><input type="text" name="city" value=""><span id="error-city"></span></td>
+        </tr>
+        <tr>
+          <td>State:</td>
+          <td><select class="" name="state">
+            <option value="Karnataka">Karnataka</option>
+            <option value="Tamil Nadu">Tamil Nadu</option>
+            <option value="Kerala">Kerala</option>
+            <option value="Delhi">Delhi</option>
+            <option value="Punjab">Punjab</option>
+          </select><span id="error-state"></span></td>
+        </tr>
+          <tr>
+            <td>Mobile Number:</td>
+            <td><input type="text" name="mobile" value="">
+            <select class="" name="phonetype">
+              <option value="Mobile">Mobile</option>
+              <option value="Telephone"></option>
+            </select><span id="error-mobile"></span></td>
+
+          </tr>
+          <tr>
+          <td><input type="button" onclick="check()" value="Submit" name="button"></td>
+          </tr>
+      </table>
+      </div>
+    </form>
+    </div>
+    </div>
+  </body>
+</html>

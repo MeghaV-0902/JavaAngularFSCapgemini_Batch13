@@ -8,8 +8,14 @@ public class Student
 
     //contructor for constructor injection
     public Student(int studentId, String studentName, String studentAddress) {
-        super();
+       System.out.println("constructor 1");
         this.studentId = studentId;
+        this.studentName=studentName;
+        this.studentAddress = studentAddress;
+    }
+    public Student(String studentId, String studentName, String studentAddress) {
+        System.out.println("constructor 2");
+        this.studentId = Integer.parseInt(studentId);
         this.studentName=studentName;
         this.studentAddress = studentAddress;
     }

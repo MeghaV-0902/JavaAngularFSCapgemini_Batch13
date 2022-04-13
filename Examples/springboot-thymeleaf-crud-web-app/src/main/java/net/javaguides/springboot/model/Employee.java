@@ -12,7 +12,7 @@ import javax.persistence.Table;
 public class Employee {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
     @Column(name = "first_name")
@@ -23,6 +23,16 @@ public class Employee {
 
     @Column(name = "email")
     private String email;
+    
+    @Column(name = "department")
+    private String dept;
+    
+    @Column(name = "location")
+    private String loc;
+    
+    @Column(name = "phone_num")
+    private int phoneNumber;
+    
     public long getId() {
         return id;
     }
@@ -47,4 +57,23 @@ public class Employee {
     public void setEmail(String email) {
         this.email = email;
     }
+	
+	public String getDept() {
+		return dept;
+	}
+	public void setDept(String dept) {
+		this.dept = dept;
+	}
+	public String getLoc() {
+		return loc;
+	}
+	public void setLoc(String loc) {
+		this.loc = loc;
+	}
+	public int getPhoneNumber() {
+		return phoneNumber;
+	}
+	public void setPhoneNumber(int phoneNumber) {
+		this.phoneNumber = phoneNumber;
+	}
 }
