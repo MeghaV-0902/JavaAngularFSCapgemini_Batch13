@@ -1,0 +1,56 @@
+
+<div class="container">
+    <h2>Registration</h2>
+<form #userform="ngForm"ngNativeValidate>
+    {{registration | json}}
+<div class="form-group">
+        <label for="Name">Name</label>
+        <input type="text" id="name" name="name" class="form-control" [(ngModel)]="registration.name" minlength="3" #cssTest>
+    
+</div>
+<h2>{{cssTest.className}}</h2>
+<div class="form-check form-group">
+    <input id="notification" name="notification" type="checkbox" class="form-check-input" [(ngModel)]="registration.notification">
+    <label for="notification" class="form-check-label">Notifications</label>
+</div>
+<div class="form-check form-group">
+    <input id="alert" name="alert" type="checkbox" class="form-check-input" [(ngModel)]="registration.alerts">
+    <label for="alert" class="form-check-label">Alerts</label>
+</div>
+<div class="form-group">
+    <div class="form-check ">
+        <input name="gender" id="gender" value="Male" type="radio" class="form-check-input" checked [(ngModel)]="registration.gender">
+        <label class="form-check-label" for="gender">Male</label>
+    </div>
+    <div class="form-check ">
+        <input name="gender" id="gender" value="Female" type="radio" class="form-check-input" [(ngModel)]="registration.gender">
+        <label class="form-check-label" for="gender">Female</label>
+    </div>
+</div>
+<div class="form-group">
+    <label for="subscriptionType">Subscription Type</label>
+    <select class="form-control" name="subscriptionType" id="subscriptionType" [(ngModel)]="registration.subscriptionType">
+        <option value="Monthly">Monthly</option>
+        <option value="Quaterly">Quaterly</option>
+        <option value="Annualy">Annualy</option>
+    </select>
+</div>
+
+<div class="form-group">
+    <label for="notes" name="notes">Notes</label>
+    <textarea name="notes" id="notes" class="form-control" cols="30" rows="3" [(ngModel)]="registration.notes"></textarea>
+</div>
+
+<!-- <div class="form-group">
+    <label for="pass" name="pass">Password</label>
+    <input type="password" name="pass" id="pass" class="form-control" ngModel>
+</div>
+<div class="form-group">
+    <label for="date" name="date">Date</label>
+    <input type="date" name="date" id="date" class="form-control" ngModel>
+</div> -->
+<button class="btn btn-primary">OK</button>
+</form>
+<br>
+
+</div>

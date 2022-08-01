@@ -1,0 +1,182 @@
+Angular offers two form-building technologies: reactive forms and template-driven forms. The two technologies belong to the @angular/forms library and share a standard set of form control classes. In this example, we will see Reactive Forms.
+
+Reactive forms
+Angular reactive forms facilitate a reactive style of programming that favors explicit management of the data flowing between a non-UI data model (typically retrieved from a server) and a UI-oriented form model that retains the states and values of the HTML controls on the screen. Reactive forms offer the ease of using reactive patterns, testing, and validation.
+
+With reactive forms, you create a tree of Angular form control objects in the component class and bind them to native form control elements in the component template.
+
+Template-driven forms
+In template-driver forms, you place HTML form controls (such as <input> and <select>) in the component template and bind them to data model properties in the component, using directives like ngModel. You don’t create Angular form control objects.
+
+Angular directives create them for you, using the information in your data bindings. You don’t push and pull data values. Angular handles that for you with ngModel.
+
+Angular 7 Forms Example
+Firstly, we install our Angular 7 project using Angular CLI.
+
+#1: Install Angular 7
+If you have not installed Angular CLI globally on your machine, then install it using the following command.
+
+npm install -g @angular/cli
+
+# or
+
+yarn add global @angular/cli
+Now, create a local project using the following command.
+
+ng new forms
+Now, start the application using the following command.
+
+ng serve --open
+#2: Include Bootstrap 4 in Angular 7.
+Go to your terminal and install Bootstrap 4 using the following code.
+
+npm install bootstrap 4 --save
+After that go to the inside src folder and open styles.css file and import the bootstrap.min.css file.
+
+@import "~bootstrap/dist/css/bootstrap.min.css";
+Save the file, and if your development server is running then, you can see the changes at http://localhost:4200/
+
+#3: Import ReactiveFormsModule.
+Inside src >> app >> app.module.ts file, import the ReactiveFormsModule.
+
+// app.module.ts
+
+import { ReactiveFormsModule } from '@angular/forms';
+
+imports: [
+  BrowserModule,
+  ReactiveFormsModule
+],
+#4: Import FormGroup and FormControl.
+Now, we will create a form inside app.component.ts.
+
+So, we need to import FormControl and FormGroup class inside an app.component.ts file.
+
+// app.component.ts
+
+import { Component } from '@angular/core';
+import { FormControl, FormGroup } from '@angular/forms';
+
+@Component({
+  selector: 'app-root',
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.css']
+})
+export class AppComponent {
+  title = 'app';
+  angularForm = new FormGroup ({
+    name: new FormControl()
+  });
+}
+So, what I have done are import FormControl and FormGroup modules.
+
+Next, Create a form object called angularForm and pass the input called name.
+
+All the form controls are also a form object.
+
+So, angularForm is root html form object.
+
+Inside all the input types are sub-objects.
+
+Now, we can create a form inside an app.component.html file.
+
+#5: Create a form.
+Write the following code inside an app.component.html file.
+
+<h2>Angular 7 Forms</h2>
+<form [formGroup]="angularForm">
+  <div class="form-group">
+    <label class="center-block">Name:
+      <input class="form-control" formControlName="name">
+    </label>
+  </div>
+</form>
+So, we have assigned the formGroup called angularForm. We have created formGroup inside app.component.ts file already, we have just assigned them to the form element.
+
+Also, we have created a formControl attribute called name inside an app.component.ts file, here we have assigned it to the form input type.
+
+Save the file and go to the: http://localhost:4200/
+
+You can see the form.
+
+Angular 6 Forms Tutorial Example
+
+ 
+
+#6: Import FormBuilder module.
+The FormBuilder class helps reduce repetition and clutter by handling details of control creation for you.
+
+Import FormBuilder class inside app.module.ts file.
+
+// app.component.ts
+
+import { Component } from '@angular/core';
+import { FormControl, FormGroup, FormBuilder } from '@angular/forms';
+
+@Component({
+  selector: 'app-root',
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.css']
+})
+export class AppComponent {
+  title = 'app';
+  angularForm = new FormGroup ({
+    name: new FormControl()
+  });
+  constructor(private fb: FormBuilder) { // <--- inject FormBuilder
+    this.createForm();
+  }
+  createForm() {
+    this.angularForm = this.fb.group({
+      name: '',
+    });
+  }
+}
+
+FormBuilder.group is a factory method that creates a FormGroup.   FormBuilder.group takes an object whose keys and values are FormControl names and their definitions. In this example, the name control is defined by its initial data value, an empty string.
+
+#7: Insert Validation into the field.
+First, we need to import Validators module inside an app.component.ts file.
+
+// app.component.ts
+
+import { FormControl, FormGroup, FormBuilder, Validators } from '@angular/forms';
+
+Now, we just need to pass an array as a value to the name property.
+
+// app.component.ts
+
+createForm() {
+    this.angularForm = this.fb.group({
+      name: ['', Validators.required ],
+    });
+}
+#8: Display Angular 7 Validation Errors.
+Now, I have changed the form design and added the validation errors.
+
+If the error occurs then it displays in the form. If any error is still there, then the submit button is disabled.
+
+<!-- app.component.html -->
+
+<div class="container">
+    <h1>
+      Angular 6 Forms
+    </h1>
+    <form [formGroup]="angularForm" novalidate>
+          <div class="form-group">
+              <label>Name:</label>
+              <input class="form-control" formControlName="name" type="text">
+          </div>
+          <div *ngIf="angularForm.controls['name'].invalid && (angularForm.controls['name'].dirty || angularForm.controls['name'].touched)" class="alert alert-danger">
+              <div *ngIf="angularForm.controls['name'].errors.required">
+                Name is required.
+              </div>
+          </div>
+          <button type="submit"
+              [disabled]="angularForm.pristine || angularForm.invalid" class="btn btn-success">
+              Save
+          </button>
+    </form>
+    <br />
+  </div>
+ 

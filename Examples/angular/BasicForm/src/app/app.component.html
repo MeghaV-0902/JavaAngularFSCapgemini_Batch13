@@ -1,0 +1,10 @@
+<div>
+  <h1>Person information form</h1>
+  Name: <input type="text" name="name" [(ngModel)]='name'>
+  Age: <input type="number" name="name" [(ngModel)]='age'>
+  Color: <input type="text" name="name" [(ngModel)]='color'>
+</div>
+<button (click)="display()">Submit</button>
+<H2>Output</H2>
+<h3>{{information}}</h3>
+<router-outlet></router-outlet>

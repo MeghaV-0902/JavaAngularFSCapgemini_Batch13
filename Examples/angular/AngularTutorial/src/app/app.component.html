@@ -1,0 +1,12 @@
+<h1>Hello</h1>
+<button (click)="toggleSwitch()" >Bulb</button>
+<div *ngIf="switch; then switchOn else switchOff"></div>
+<ng-template #switchOn>
+bulb is ON
+</ng-template>
+<ng-template #switchOff>
+bulb is OFF
+</ng-template>
+
+<router-outlet></router-outlet>
+ 

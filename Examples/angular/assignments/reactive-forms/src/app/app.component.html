@@ -1,0 +1,16 @@
+
+<div class="container">
+<h2>Angular form</h2>
+<form [formGroup]="angularForm" novalidate>
+  <div class="form-group">
+    <label class="center-block">Name:
+      <input class="form-control" formControlName="name">
+    </label>
+  </div>
+  <div *ngIf="angularForm.controls['name'].errors?.['required']">
+   name is required.
+  </div>
+  <button type="submit" [disabled]="angularForm.pristine || angularForm.invalid" class="btn btn-success">Save</button>
+</form>
+<br>
+</div>

@@ -1,0 +1,23 @@
+/* You can add global styles to this file, and also import other style files */
+h1
+{
+    color: goldenrod;
+    font-family: cursive;
+    font-size: 250%;
+}
+
+table
+{
+    font-family: 'Courier New', Courier, monospace;
+    font-size: medium;
+    border-collapse: collapse;
+}
+td{
+    border: 1px solid black;
+    background-color: white;
+}
+
+.back
+{
+    background-color: rosybrown;
+}

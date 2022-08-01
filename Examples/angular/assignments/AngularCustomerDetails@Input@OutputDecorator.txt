@@ -1,0 +1,170 @@
+@input
+@output
+EventEmitter
+Decorator
+Steps to create the Update Customer Example
+
+1.ng new InputOutputExample
+select routing ->Yes
+css ->Yes
+2.cd InputOutputExample
+3.ng g c customerList
+4.ng g c customerDetail
+5.ng g class customer
+
+
+==================================================================
+Purpose of the Example:
+The child componenet will get an instance of the customer as its input property and parent wil set using the property binding
+event == update(customer)
+parent component will listen to the event and receivves the data
+======================================================================
+CustomerDetailcomponent.html
+
+<p>Customer No:{{customer.customerNo}}</p>
+<p>Name : <input [(ngModel)]= "customer.name"></p>
+<p>Address : <input [(ngModel)]= "customer.address"></p>
+<p>City : <input [(ngModel)]= "customer.city"></p>
+<p>state : <input [(ngModel)]= "customer.state"></p>
+<p>country : <input [(ngModel)]= "customer.country"></p>
+<button (click) = "update()">Update</button>
+
+=============================================================
+CustomerDetailComponent.ts
+
+import { Component, OnInit,Input,Output,EventEmitter } from '@angular/core';
+import { Customer } from '../customer';
+@Component({
+  selector: 'app-customer-detail',
+  templateUrl: './customer-detail.component.html',
+  styleUrls: ['./customer-detail.component.css']
+})
+export class CustomerDetailComponent implements OnInit {
+@Input() customer:Customer =new Customer();
+@Output() customerChange:EventEmitter<Customer> =new EventEmitter<Customer>();
+
+
+  constructor() { }
+
+  ngOnInit(): void {
+  }
+update()
+{
+  this.customerChange.emit(this.customer);
+}
+}
+===========================================================
+customer-list.component.html
+<h2>customer-list</h2>
+
+<table class="table">
+<thead>
+ <tr>
+     <th>No</th>
+     <th>Name</th>
+     <th>Address</th>
+     <th>City</th>
+     <th>State</th>
+     <th>Country</th>
+     <th>Edit</th>
+     </tr>
+     </thead>
+     <tbody>
+        <tr *ngFor = "let customer of customers;">
+            <td>{{customer.customerNo}}</td>
+            <td>{{customer.name}}</td>
+            <td>{{customer.address}}</td>
+            <td>{{customer.city}}</td>
+            <td>{{customer.state}}</td>
+            <td>{{customer.country}}</td>
+            <td><button (click) ="showDetails(customer)">Edit</button></td>
+
+
+        </tr>
+     </tbody>
+</table>
+<h3> Details</h3>
+<app-customer-detail [customer]="selectedCustomer" (customerChange)="update($event)">
+    
+</app-customer-detail>
+
+======================================================
+customer-list.component.ts
+import { Component, OnInit } from '@angular/core';
+import { Customer } from '../customer';
+import {element} from 'protractor';
+import { ObjectUnsubscribedError } from 'rxjs';
+
+@Component({
+  selector: 'app-customer-list',
+  templateUrl: './customer-list.component.html',
+  styleUrls: ['./customer-list.component.css']
+})
+export class CustomerListComponent implements OnInit {
+
+customers:Customer[]=[
+
+  {customerNo:1,name:'Xyz',address:'',city:'Mumbai',state:'Maharashtra',country:'India'},
+  
+]
+selectedCustomer:Customer =new Customer();
+
+  constructor() { }
+
+  ngOnInit(): void {
+  }
+showDetails(customer:Customer){
+  this.selectedCustomer = Object.assign({},customer)
+}
+
+update(customer:Customer){
+  console.log(customer)
+  var cust = this.customers.find(e=>e.customerNo==customer.customerNo)
+  Object.assign(cust,customer)
+  alert("Customer Saved")
+}
+}
+=====================================================
+
+app.module.ts
+import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
+import { AppRoutingModule } from './app-routing.module';
+import { AppComponent } from './app.component';
+import { CustomerListComponent } from './customer-list/customer-list.component';
+import { CustomerDetailComponent } from './customer-detail/customer-detail.component';
+
+@NgModule({
+  declarations: [
+    AppComponent,
+    CustomerListComponent,
+    CustomerDetailComponent
+  ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    FormsModule
+  ],
+  providers: [],
+  bootstrap: [AppComponent]
+})
+export class AppModule { }
+===========================================================
+customer.ts
+export class Customer {
+
+    customerNo:number=0;
+    name:string="";
+    address:string="";
+    city:string="";
+    state:string="";
+    country:string="";
+}
+================================================================
+and last add
+<app-customer-list></app-customer-list>
+in app-component.html
+
+==========================================================
+ng serve

@@ -1,0 +1,172 @@
+How to Read Angular JSON File and Display Data in Table
+•	Step 1: Install Angular App
+•	Step 2: Create JSON Data File
+•	Step 3: Create User Interface
+•	Step 4: Create Bootstrap Table
+•	Step 5: Update tsconfig JSON
+•	Step 6: Start Angular App
+Install Angular App
+First and foremost, make sure to install the angular cli on your development machine using the given below command.
+npm install -g @angular/cli
+
+
+Next, with the help of the Angular CLI schematic, install the angular application.
+ng new ng-demo
+
+
+Get inside the project folder:
+cd ng new ng-demo
+
+
+Execute command to install the latest version of Bootstrap in angular.
+npm install bootstrap --save
+
+
+Next, add the Bootstrap CSS path in angular.json file to enable the styling.
+"styles": [
+     "node_modules/bootstrap/dist/css/bootstrap.min.css",
+     "src/styles.scss"
+]
+JSON
+
+Create JSON Data File
+In this step, you have to create a users.json file; furthermore, you must add the provided json objects to create a json file.
+Open and add code in src/app/users.json file.
+[{
+    "id": 1,
+    "name": "Leanne Graham",
+    "username": "Bret",
+    "email": "Sincere@april.biz"
+  },
+  {
+    "id": 2,
+    "name": "Ervin Howell",
+    "username": "Antonette",
+    "email": "Shanna@melissa.tv"
+  },
+  {
+    "id": 3,
+    "name": "Clementine Bauch",
+    "username": "Samantha",
+    "email": "Nathan@yesenia.net"
+  },
+  {
+    "id": 4,
+    "name": "Patricia Lebsack",
+    "username": "Karianne",
+    "email": "Julianne.OConner@kory.org"
+  },
+  {
+    "id": 5,
+    "name": "Chelsey Dietrich",
+    "username": "Kamren",
+    "email": "Lucio_Hettinger@annie.ca"
+  },
+  {
+    "id": 6,
+    "name": "Mrs. Dennis Schulist",
+    "username": "Leopoldo_Corkery",
+    "email": "Karley_Dach@jasper.info"
+  },
+  {
+    "id": 7,
+    "name": "Kurtis Weissnat",
+    "username": "Elwyn.Skiles",
+    "email": "Telly.Hoeger@billy.biz"
+  },
+  {
+    "id": 8,
+    "name": "Nicholas Runolfsdottir V",
+    "username": "Maxime_Nienow",
+    "email": "Sherwood@rosamond.me"
+  },
+  {
+    "id": 9,
+    "name": "Glenna Reichert",
+    "username": "Delphine",
+    "email": "Chaim_McDermott@dana.io"
+  },
+  {
+    "id": 10,
+    "name": "Clementina DuBuque",
+    "username": "Moriah.Stanton",
+    "email": "Rey.Padberg@karina.biz"
+  }
+]
+JSON
+
+Create User Interface
+In the previous step, we created a JSON file, now get into the app.component.ts file, import the UsersJson file and create the USERS interface.
+import { Component } from '@angular/core';
+import UsersJson from './users.json';
+  
+interface USERS {
+    id: Number;
+    name: String;
+    username: String;
+    email: String;
+}
+@Component({
+  selector: 'app-root',
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.scss']
+})
+export class AppComponent {
+  
+  Users: USERS[] = UsersJson;
+  constructor(){
+    console.log(this.Users);
+  }
+}
+TypeScript
+
+Create Bootstrap Table
+In this step, you have to use the bootstrap table UI component to display the data from JSON file.
+Now, open the app.component.html file, append the entire given code within the angular html file.
+<div class="container mt-5">
+  
+  <h2>Angular Display Data from Json File Example</h2>
+  
+  <table class="table table-striped">
+    <thead>
+        <tr>
+          <th>Id</th>
+          <th>Name</th>
+          <th>Username</th>
+          <th>Email</th>
+        </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of Users">
+        <td>{{ user.id }}</td>
+        <td>{{ user.name }}</td>
+        <td>{{ user.username }}</td>
+        <td>{{ user.email }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+Markup
+
+Update tsconfig JSON
+Before you start the application, you have to tweak your tsconfig.json file, define the resolveJsonModule and esModuleInterop inside the compilerOptions object.
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "resolveJsonModule": true,
+    "esModuleInterop": true,  
+...
+...
+JSON
+
+Start Angular App
+Now, you can open the terminal and start writing the given command and hit enter to start the angular app:
+ng serve
+
+
+This is the url which you need to view the app.
+http://localhost:4200
+
+
+ 
+

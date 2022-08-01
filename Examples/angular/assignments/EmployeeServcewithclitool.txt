@@ -1,0 +1,88 @@
+ng new injectableService
+cd injectableService
+ng generate service Employee
+
+app.component.ts
+import { Component } from '@angular/core';
+import { EmployeeService } from './employee.service';
+@Component({
+  selector: 'app-root',
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.css'],
+  providers:[EmployeeService]
+})
+export class AppComponent {
+  employees : any[] | undefined;
+  constructor (private _employeeservice:EmployeeService){}
+ /* {
+    this.employees = this._employeeservice.getEmployees();
+  }*/
+ngOnInit()
+{
+  this.employees = this._employeeservice.getEmployees();
+
+}
+}
+======================================
+app.component.html
+<h2>
+  Employee Service
+</h2>
+<table>
+  <thead>
+    <tr><th>ID</th>
+      <th>First Name</th>
+        <th>Last Name</th>
+          <th>Department</th>
+            <th>DOB</th>
+              <th>Gender</th>
+</tr>
+  </thead>
+  <tbody>
+    <tr *ngFor = 'let employee of employees'>
+      <td>{{employee.ID}}</td>
+      <td>{{employee.FirstName}}</td>
+
+      <td>{{employee.LastName}}</td>
+
+      <td>{{employee.Department}}</td>
+
+      <td>{{employee.DOB}}</td>
+      <td>{{employee.Gender}}</td>
+
+    </tr>
+  </tbody>
+</table>
+===============================
+
+employee.service.ts
+import { Injectable } from '@angular/core';
+//decorator is used to inject other dependecies into the service
+
+export class EmployeeService {
+
+  getEmployees(): any[]{
+    return[
+      {
+        ID:'A101',FirstName : 'Ashu', LastName : 'Johar',
+        Department : 'IT', DOB : '29/03/1990', Gender : 'Female'
+      },
+      {
+        ID:'A102',FirstName : 'Dipti', LastName : 'Anjarlekar',
+        Department : 'Finance', DOB : '03/08/1992', Gender : 'Female'
+      },
+      {
+        ID:'A103',FirstName : 'Nitya', LastName : 'Reddy',
+        Department : 'IT', DOB : '29/03/1995', Gender : 'Male'
+      },
+      {
+        ID:'A104',FirstName : 'Sudha', LastName : 'Joshi',
+        Department : 'Logistics', DOB : '08/12/1993', Gender : 'Female'
+      },
+      {
+        ID:'A105',FirstName : 'Manjusha', LastName : 'Kadam',
+        Department : 'Account', DOB : '23/01/1995', Gender : 'Female'
+      }
+    ];
+  }
+}
